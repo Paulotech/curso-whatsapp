@@ -1,7 +1,7 @@
 /*
- * Script controlador do fundo e seus assets
- * @author Everton Cesario <everton.cesario@webaula.com.br> 01/01/2016
- */
+* Script controlador do fundo e seus assets
+* @author Everton Cesario <everton.cesario@webaula.com.br> 01/01/2016
+*/
 
 window.onload = init;
 window.onbeforeunload = window.onpagehide = window.onunload = fechouJanela;
@@ -14,6 +14,7 @@ try {
 // Armazena a API se houver
 var api = findAPI(window);
 var habilitaConsole = true;
+var frame = 0;
 
 // Assets e Fundo
 var totalCenas;
@@ -211,8 +212,13 @@ function loadApp() {
 				habilitaContinuar(e.currentTarget.dataset.proximo);	
 
 			}else if (e.currentTarget.dataset.proximo == undefined || e.currentTarget.dataset.proximo == "null" || e.currentTarget.dataset.proximo == null){
-				telaWhatsapp()
-				// habilitaAcao();
+
+				if(frame + 1 <= estrutura.whatsapp.length ) {
+					console.log(e.currentTarget.dataset.proximo)
+					telaWhatsapp();
+				} else {
+					habilitaAcao();
+				}
 			}else{
 				habilitaContinuar();				
 			}
@@ -222,58 +228,132 @@ function loadApp() {
 			conteudo.querySelector("#btn_action").classList.add("d-none");
 		}
 	}
+
 	// Gambis
 	function telaWhatsapp() {
 		var ElementWhatsapp = conteudo.querySelector(".janela-whatsapp");
 		var video = conteudo.querySelector("#video");
 		var btn = conteudo.querySelector("#btn_action");
+
 		video.classList.add("d-none");
 		btn.classList.add("d-none");
 		ElementWhatsapp.classList.remove("d-none");
 
 		
 			var $dialogo = ElementWhatsapp.querySelector(".dialogo-whatsapp");
-			var elementPgt = estrutura.whatsapp[0].texto;
+			var elementPgt = estrutura.whatsapp[frame].texto;
 			
 			var $balao = document.createElement("div");
 			var $pgt = document.createElement("p");
 			
+			// var audio = new Audio('audio/mensagemWhatsapp.mp3');
+			
+
 			
 			$balao.classList.add("balao-e");
 			
-			$pgt.append(elementPgt);
+			$pgt.innerHTML = elementPgt;
 			$balao.appendChild($pgt);
-			$dialogo.appendChild($balao);
-
-			// console.log($balao)
-			montaOpcoes();
+			setTimeout(function(){
+				// audio.play();
+				$dialogo.appendChild($balao);
+			}, 2000) 
+			
+			
+			montaOpcoes(frame);
 	}
 
-	function montaOpcoes() {
+	function montaOpcoes(frame) {
 		var $respostas = conteudo.querySelectorAll(".janela-whatsapp .rodape-whatsapp .res");
-		
-		var frame = 0;
-		
+		var $indicacao = conteudo.querySelector(".janela-whatsapp .rodape-whatsapp .indicacao");
 		var element = estrutura.whatsapp[frame];
 		
-		for (var i = 0; i < element.opcoes.length; i++) {
-			var opcao = element.opcoes[i];
+		setTimeout(function(){
+			for (var i = 0; i < element.opcoes.length; i++) {
 
-			var $opcao = document.createElement("p");
+				var opcao = element.opcoes[i];
+				var $opcao = document.createElement("p");
+				
+				$indicacao.classList.remove('d-none');
+				
+				
+				$opcao.innerHTML = opcao;
+				$opcao.classList.add("opcao" + ([i + 1]));
+				$respostas[i].appendChild($opcao);
+				$respostas[i].querySelector("p").addEventListener('click', function() {
+					var ele = this;
+					
+					for (let i = 0; i < $respostas.length; i++) {
+						const elemento = $respostas[i];
+						elemento.querySelector("p").remove("opcao" + [ i + 1 ]);
+					}
+					$indicacao.classList.add('d-none');
+					montaTela(ele, frame);
+				})
+				
+			}
+		}, 3000) 
+	}
+	
+	function montaTela(ele) {
+		var ElementWhatsapp = conteudo.querySelector(".janela-whatsapp");
+		var $dialogo = ElementWhatsapp.querySelector(".dialogo-whatsapp");
+		var $balao = document.createElement("div");
+				
+		$balao.classList.add("balao-d");
+		// console.log(ele);
+		$balao.append(ele);
+		$dialogo.appendChild($balao);
+		frame ++;
+		if(frame + 1 <= estrutura.whatsapp.length ) {
+			telaWhatsapp();
+		} else {
+			setTimeout(function() {
 
-			$opcao.append(opcao);
-
-			$respostas[i].append(opcao);
-			$respostas[i].classList.add("opcao" + ([i] + 1));
-			$respostas[i].addEventListener('click', function() {
-				console.log(this);
-			})
-			// console.log($respostas)
+				var ElementWhatsapp = conteudo.querySelector(".janela-whatsapp");
+				ElementWhatsapp.classList.add("d-none");
+				// var video = conteudo.querySelector("#video");
+				// video.classList.remove("d-none");
+				playSkype();
+				
+				
+			}, 2000)
+			
 		}
-			// var elemento = element[x];
 		
 	}
+	
+	function playSkype() {
 
+		var $videoSkype = conteudo.querySelector("#videoSkype");
+		var $video = $videoSkype.querySelector(".video");
+		
+		$videoSkype.classList.remove("d-none");
+		$video.play();
+		
+		conteudo.querySelector("#btn_next").classList.remove("d-none");
+		conteudo.querySelector("#btn_next").classList.add("skyeButton");
+
+		conteudo.querySelector("#btn_next").addEventListener("click", function(e) {
+			
+			$videoSkype.classList.add("d-none");
+			var video = conteudo.querySelector("#video");
+			video.classList.remove("d-none");
+			// acionaProximo(2);
+			// habilitaAcao();
+			habilitaContinuar(true);
+			// console.log(next_f);
+			// cenaAtual+1;
+			conteudo.querySelector("#btn_next").classList.remove("skyeButton");
+			
+		});
+
+		// $video.addEventListener("click", function() {
+
+		// });
+	}
+
+	// Final Gambis
 	function habilitaContinuar(next){
 		next_f = ~~next;
 		conteudo.querySelector("#btn_next").classList.remove("d-none");
@@ -327,11 +407,13 @@ function loadApp() {
 			clearInterval(interval);
 	        habilitaIcone(true);
 	    },20000);		
-			
+		
 		conteudo.querySelector("#btn_next").classList.add("d-none");
 		conteudo.querySelector("#btn_action").classList.add("d-none");
 		conteudo.querySelector("#btn_next").removeEventListener("click", habilitaAcao);
 		quadro.classList.remove("d-none");
+    	quadro.classList.add("question");
+
 		
 		question.innerHTML = "<div id='timer' class='d-none'><img src='imagens/pensamento.png'/> <p>Vamos lá? Qual é a melhor opção?</p></div><div id='enunciado'>"+estrutura.cenas[cenaAtual].pergunta+"</div><div id='opcoes' class='flex-ctr'></div><div id='btn_rever'></div>";
 		question.querySelector("#btn_rever").addEventListener("click", reverVideo);		

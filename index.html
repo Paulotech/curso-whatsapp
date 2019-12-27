@@ -39,6 +39,7 @@
 				position: relative;
 				display: flex;
 				justify-content: center;
+				flex-wrap: wrap;
 			}
 			.topo-whatsapp .dados-whatsapp {
 				display: inline-block;
@@ -53,14 +54,9 @@
 				font-size: 1.2rem;
 				line-height: 2rem;
 			}
-			/* .rodape-whatsapp, .rodape-whatsapp i {
-				display: inline-block;
-				position: absolute;
-				top: 50%;
-				-webkit-transform: translateY(-50%);
-				-ms-transform: translateY(-50%);
-				transform: translateY(-50%);
-			} */
+			.rodape-whatsapp .indicacao {
+				width: 100%;
+			}
 			.balao-d {
 				float: right;
 				background-color: #c7ebad;
@@ -87,6 +83,26 @@
 				padding: 10px;
 				background-color: aquamarine;
 			}
+			.res p {
+				cursor: pointer;
+			}
+			#videoSkype {
+				width: 100%;
+				height: 100%;
+				background-color: aqua;
+			}
+			#videoSkype .video {
+				width: 100%;
+				height: 100%;
+			}
+			.skyeButton {
+				background-image: url("imagens/skypebutton.png") !important;
+				width: 100% !important;
+				height: 100% !important;
+				bottom: 40px !important;
+    			left: -70px !important;
+			}
+
 		</style>
 	</head>
 	<body>	
@@ -94,6 +110,7 @@
 			<video id="video"></video>									
 			<div id="btn_action" class="d-none"></div>
 			<div id="btn_next" class="d-none"></div>
+			<div id="btn_next_" class="d-none"></div>
 			<div class="quadro">
 				<div id="pergunta" class="d-none flex"></div>
 				<div id="abertura">
@@ -119,18 +136,24 @@
 				</div>
 				<div class="dialogo-whatsapp">
 					
-					
-					
 				</div>
 				<div class="rodape-whatsapp">
-					<div class="res resposta1">
+					<div class="indicacao d-none">
+						<p>Como você deseja responder à essa mensagem?</p>
+					</div>
+					<div class="res">
 						
 					</div>
-					<div class="res resposta2">
+					<div class="res">
 						
 					</div>
 					<!-- <i class="fa fa-microphone"></i> -->
 				</div>
+			</div>
+			<div id="videoSkype" class="d-none">
+				<video loop class="video">
+					<source src="videos/cena2.mp4" type="video/mp4">
+				</video>
 			</div>
 			<!-- Fim Gambis -->
 		</div>
