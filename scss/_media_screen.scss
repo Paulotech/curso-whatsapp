@@ -1,0 +1,256 @@
+@media (min-width: 415px) and (max-width: 768px) {   
+    h2 {        
+        font-size: 42px !important;
+        padding: 20px;
+    }
+
+    p, ol, ul, li {        
+        font-size: 18px !important;        
+    }
+
+    #conteudo{
+        #btn_action{
+            width: 100px;
+            height: 100px;         
+            bottom: 30px;
+            left: calc(50% - 50px);
+        }
+
+        #abertura{
+            padding: 20px !important;
+        }
+
+        #encerramento{
+            padding: 20px !important;
+        }
+
+
+        #pergunta{            
+            padding: 30px !important;
+            
+            #btn_rever{
+                width: 80px;
+                height: 80px;                    
+            }
+
+            #opcoes{
+                [id*='opcao']{
+                    line-height: initial !important;
+                    margin: 20px 0 30px 0px !important;
+
+                    &.watsapp {
+                        padding: 10px 20px 10px 50px !important;
+
+                        &::after {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0px !important;
+                            font-size: 28px !important;
+                            font-weight: bold !important;
+                            color: #f5e600 !important;
+                            line-height: 26px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 376px) and (max-width: 414px) {   
+    h2 {
+        font-size: 28px !important;
+    }
+
+    p, ol, ul, li {        
+        font-size: 18px !important;        
+    }
+
+    #conteudo{
+        #btn_action{
+            width: 100px;
+            height: 100px;         
+            bottom: 30px;
+            left: calc(50% - 50px);
+        }
+
+        #abertura{
+            padding: 30px !important;   
+        }
+
+        #encerramento{
+            padding: 30px !important;   
+        }
+
+
+        #pergunta{
+            padding: 30px !important;
+            
+            #btn_rever{
+                width: 70px;
+                height: 70px;                     
+            }
+
+            #opcoes{                
+                [id*='opcao']{
+                    line-height: initial !important;
+                    margin: 10px 0 10px 0px !important;
+
+                    &.watsapp {
+                        padding: 10px 20px 10px 50px !important;
+
+                        &::after {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0px !important;
+                            font-size: 28px !important;
+                            font-weight: bold !important;
+                            color: #f5e600 !important;
+                            line-height: 24px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 321px) and (max-width: 375px) {
+    h2 {
+        font-size: 24px !important;
+    }
+
+    p, ol, ul, li {        
+        font-size: 16px !important;        
+    }
+
+    #conteudo{
+        #btn_action{
+            width: 100px;
+            height: 100px;         
+            bottom: 100px;
+            left: calc(50% - 50px);
+        }
+
+        #abertura{
+            padding: 30px !important;
+        }
+
+        #encerramento{
+            padding: 30px !important;
+        }    
+
+        #pergunta{
+            padding: 20px !important;            
+
+            #btn_rever{
+                width: 70px;
+                height: 70px;                     
+            }
+
+            #opcoes{
+                margin-top: 0px !important;
+
+                [id*='opcao']{
+                    line-height: initial !important;                
+                    margin: 10px 0 10px 0px !important;
+                    padding: 10px 30px 10px 40px !important;
+                    
+                    &::after {
+                        position: absolute !important;
+                        top: 0 !important;
+                        left: -10px !important;
+                        font-size: 42px !important;
+                        font-weight: bold !important;
+                        color: #f5e600 !important;
+                        line-height: 42px !important;
+                    }
+
+                    &.watsapp {
+                        padding: 10px 20px 10px 50px !important;
+
+                        &::after {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0px !important;
+                            font-size: 28px !important;
+                            font-weight: bold !important;
+                            color: #f5e600 !important;
+                            line-height: 22px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    h1{
+        font-size: 42px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+        margin: 0 !important;
+    }    
+
+    p, ol, ul, li {        
+        font-size: 16px !important;        
+    }
+
+    #conteudo{        
+        #btn_action{
+            width: 100px;
+            height: 100px;         
+            bottom: 30px;
+            left: calc(50% - 50px);
+        }
+
+        #abertura{
+            padding: 20px !important;
+        }
+        #encerramento{
+            padding: 20px !important;
+        }
+
+        #pergunta{
+            padding: 20px !important;
+
+            #btn_rever{
+                width: 50px;
+                height: 50px;                         
+            }
+
+            #opcoes{
+                [id*='opcao']{
+                    line-height: initial !important;
+                    margin: 5px 0 5px 0px !important;
+                    padding: 10px 10px 0px 30px !important;
+                    font-size: 32px !important;
+
+                    &::after {
+                        position: absolute !important;
+                        top: 0 !important;
+                        left: -10px !important;
+                        font-size: 38px !important;
+                        font-weight: bold !important;
+                        color: #f5e600 !important;
+                        line-height: 38px !important;
+                    }
+
+                    &.watsapp {
+                        padding: 10px 20px 10px 50px !important;
+
+                        &::after {
+                            position: absolute !important;
+                            top: 0 !important;
+                            left: 0px !important;
+                            font-size: 26px !important;
+                            font-weight: bold !important;
+                            color: #f5e600 !important;
+                            line-height: 24px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
