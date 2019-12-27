@@ -1,0 +1,89 @@
+.ps-relative {
+    position: relative;
+}
+
+.ps-absolute {
+    position: absolute;
+}
+
+.ps-fixed {
+    position: fixed;
+}
+
+// ==========================================================================
+// Align
+// ==========================================================================
+.u-flex { display: flex; }
+.u-inline-flex { display: inline-flex; }
+
+.u-flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.u-flex-ctr-y { align-items: center; }
+.u-flex-ctr-x { justify-content: center; }
+.u-flex-start { justify-content: flex-start; }
+.u-flex-end { justify-content: flex-end; }
+.u-flex-spaced { 
+    box-pack: justify;
+    flex-pack: justify;
+    justify-content: space-between;
+}
+.u-flex-wrap { flex-wrap: wrap; }
+.u-flex-grouped { align-content: center; }
+
+.u-self-start { align-self: flex-start; }
+.u-self-ctr { align-self: center; }
+.u-self-end { align-self: flex-end; }
+.u-self-stretch { align-self: stretch; }
+
+.u-align-ctr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.u-align-ctr-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.u-align-ctr-y {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-initial {
+    display: initial !important;
+}
+
+.justify-content-center {
+    justify-content: center;
+    
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.bg-contain {
+    background-size: contain;
+}
+
+.bg-cover {
+    background-size: cover;
+}
+
+.mgn-auto {
+    margin: auto;
+}

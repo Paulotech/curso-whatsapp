@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-		<title>Video interativo</title>		
+		<title></title>		
 
 		<link rel="stylesheet" href="css/reset.css">
     	<link rel="stylesheet" href="lib/bootstrap-3/css/bootstrap.min.css">
@@ -14,148 +14,84 @@
 		<script type="text/javascript" src="js/scorm/apiwrapper.js"></script>
 		<script type="text/javascript" src="js/scorm/scofunctions.js"></script>
 		<script type="text/javascript" src="js/estrutura.js?201709291"></script>	
-		<script type="text/javascript" src="js/index.js?201709291"></script>			
-		<style>
-			.janela-whatsapp {
-				height: 90%;
-				position: relative;
-				width: 80%;
-			}
-			.topo-whatsapp {
-				height: 50px;
-				background-color: #075c54;
-				color: #fff;
-				position: relative;
-			}
-			.dialogo-whatsapp {
-				overflow: auto;
-				background-color: #e8e1d4;
-				height: calc(100% - 110px);
-			}
-			.rodape-whatsapp {
-				background-color: #e8e1d4;
-				height: 100px;
-				padding: 10px 0;
-				position: relative;
-				display: flex;
-				justify-content: center;
-				flex-wrap: wrap;
-			}
-			.topo-whatsapp .dados-whatsapp {
-				display: inline-block;
-				margin-left: 12px;
-				position: absolute;
-				top: 50%;
-				-webkit-transform: translateY(-50%);
-				-ms-transform: translateY(-50%);
-				transform: translateY(-50%);
-			}
-			.dados-whatsapp .status-whatsapp {
-				font-size: 1.2rem;
-				line-height: 2rem;
-			}
-			.rodape-whatsapp .indicacao {
-				width: 100%;
-			}
-			.balao-d {
-				float: right;
-				background-color: #c7ebad;
-				margin-right: 35px;
-				border-radius: 5px 0 5px 5px;
-			}
-			.balao-d, .balao-e {
-				padding: 10px;
-				width: 60%;
-				box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
-				margin-bottom: 20px;
-				position: relative;
-				margin-top: 20px;
-			}
-			.balao-e {
-				float: left;
-				background-color: #fff;
-				margin-left: 35px;
-				border-radius: 0px 5px 5px 5px;
-			}
-			.res {
-				width: 50%;
-				position: relative;
-				padding: 10px;
-				background-color: aquamarine;
-			}
-			.res p {
-				cursor: pointer;
-			}
-			#videoSkype {
-				width: 100%;
-				height: 100%;
-				background-color: aqua;
-			}
-			#videoSkype .video {
-				width: 100%;
-				height: 100%;
-			}
-			.skyeButton {
-				background-image: url("imagens/skypebutton.png") !important;
-				width: 100% !important;
-				height: 100% !important;
-				bottom: 40px !important;
-    			left: -70px !important;
-			}
-
-		</style>
+		<script type="text/javascript" src="js/index.js?201709291"></script>
 	</head>
 	<body>	
-		<div id="conteudo" class="container flex-ctr">			
+		<div id="conteudo">			
+
 			<video id="video"></video>									
+			
 			<div id="btn_action" class="d-none"></div>
+			
 			<div id="btn_next" class="d-none"></div>
-			<div id="btn_next_" class="d-none"></div>
+			
 			<div class="quadro">
+			
 				<div id="pergunta" class="d-none flex"></div>
+			
 				<div id="abertura">
-					<h1><strong>Seja bem-vindo(a)!</strong></h1>
-					<p>A partir deste momento você é um dos funcionários da empresa Arte e Tecidos Têxtil! Considerando o seu conhecimento adquirido a respeito da gestão integrada de marketing e de comunicação, aperte o play e nos ajude a tomar algumas decisões!</p>
+					<h1>Seja bem-vindo(a)!</h1>
+					<p>A partir deste momento você é um dos funcionários da empresa <strong>Arte e Tecidos Têxtil</strong>! Considerando o seu conhecimento adquirido a respeito da gestão integrada de marketing e de comunicação, aperte o <em>play</em> e nos ajude a tomar algumas decisões!</p>
 					<div id="btn_action"></div>
 				</div>
 
 				<div id="encerramento" class="d-none">
-					<h1><strong>Parabéns!</strong></h1>
+					<h1>Parabéns!</h1>
 					<p>É ótimo poder contar com profissionais empenhados e engajados com o bom desempenho dos processos da empresa. Estamos muito satisfeitos com seu trabalho.</p>				
 				</div>
+
 			</div>
-			<!-- Gambis provisória  -->
+			<!-- / .quadro -->
+
 			<div class="janela-whatsapp d-none">
-				<div class="topo-whatsapp">
-					<i class="fa fa-angle-left"></i>
-					<img src="../../../assets/imgs/tela/4-5-foto.png" alt="Gráfico">
-					<div class="dados-whatsapp">
-						<p><strong>Nicole:</strong></p>
-						<p class="status-whatsapp">escrevendo...</p>
-					</div>
-				</div>
-				<div class="dialogo-whatsapp">
+
+				<div class="janela-whatsapp-container">
 					
-				</div>
-				<div class="rodape-whatsapp">
-					<div class="indicacao d-none">
-						<p>Como você deseja responder à essa mensagem?</p>
+					<div class="topo-whatsapp">
+						<img src="imagens/seta.png" alt="" class="ico-seta">
+						<img src="imagens/foto_whatsapp.png" alt="" class="ico-foto">
+						<div class="dados-whatsapp">
+							<p><strong>Nicole</strong></p>
+						</div>
+						<img src="imagens/camera.png" alt="" class="ico-camera">
+						<img src="imagens/telefone.png" alt="" class="ico-telefone">
 					</div>
-					<div class="res">
+
+					<div class="dialogo-whatsapp">
 						
 					</div>
-					<div class="res">
-						
+
+					<div class="rodape-whatsapp">
+						<div class="indicacao d-none">
+							<p>Como você deseja responder à essa mensagem?</p>
+						</div>
+						<div class="res">
+							
+						</div>
+						<div class="res">
+							
+						</div>
 					</div>
-					<!-- <i class="fa fa-microphone"></i> -->
+
+					<div class="rodape-whatsapp-imagens">
+						<img src="imagens/bg_whatsapp_rodape.jpg" alt="">
+					</div>
+
 				</div>
+				<!-- / .janela-whatsapp-container -->
+
 			</div>
+			<!-- / .janela-whatsapp -->
+
 			<div id="videoSkype" class="d-none">
+
 				<video loop class="video">
 					<source src="videos/cena2.mp4" type="video/mp4">
 				</video>
+
 			</div>
-			<!-- Fim Gambis -->
+
 		</div>
+		<!-- / #conteudo -->
 	</body>
 </html>

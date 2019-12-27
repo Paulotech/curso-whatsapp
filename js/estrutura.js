@@ -8,12 +8,12 @@ var estrutura =
 	[
 		{
 			id: 1,
-			texto: "Bom dia para o meu melhor assessor de comunicação!",
+			texto: "Bom dia para o meu melhor assessor de comunicação! <img src='imagens/emoji_1-01.png'>",
 			opcoes: 
 			[
 				
-				"Bom dia, Nicole!",
-				"Bom dia para minha melhor head de comunicação!!!"
+				"Bom dia, Nicole! <img src='imagens/emoji_2-01.png'>",
+				"Bom dia para minha melhor head de comunicação!!! <img src='imagens/emoji_3-01.png'>"
 				
 			]
 		},

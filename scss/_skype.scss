@@ -1,0 +1,17 @@
+#videoSkype {
+	position: fixed;
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    overflow-y: auto;
+    background-image: url('../imagens/tela_quiz.jpg');
+
+    video {
+    	max-width: 100%;
+		width: 100%;
+	    width: 100vw;
+	    height: auto;
+	    height: 100vh;
+    }
+}

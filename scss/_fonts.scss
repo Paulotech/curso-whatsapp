@@ -1,0 +1,90 @@
+$ff-light: 'Fonte Light';
+$ff-light-italic: 'Fonte Light Italic';
+$ff-default: 'Fonte Regular';
+$ff-regular: 'Fonte Regular';
+$ff-bold: 'Fonte Bold';
+$ff-bold-italic: 'Fonte Bold Italic';
+$ff-italic: 'Fonte Italic';
+$ff-semibold: 'Fonte Semibold';
+$ff-semibold-italic: 'Fonte Semibold Italic';
+$ff-extrabold: 'Fonte Extrabold';
+$ff-extrabold-italic: 'Fonte Extrabold Italic';
+
+// ==========================================================================
+// Fonts
+// ==========================================================================
+@font-face {
+	font-family: $ff-light;
+	font-style: normal;
+	font-weight: 300;
+	src : url("../fonts/OpenSans-Light.woff");
+}
+
+@font-face {
+    font-family: $ff-light-italic;
+    src: url("../fonts/OpenSans-LightItalic.woff") format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+	font-family: $ff-default;
+	font-style: normal;
+	font-weight: normal;
+	src : url("../fonts/OpenSans.woff");
+}
+
+@font-face {
+    font-family: $ff-regular;
+    font-style: normal;
+    font-weight: normal;
+    src : url("../fonts/OpenSans.woff");
+}
+
+@font-face {
+	font-family: $ff-bold;
+	font-style: normal;
+	font-weight: bold;
+	src : url("../fonts/OpenSans-Bold.woff");
+}
+
+@font-face {
+    font-family: $ff-bold-italic;
+    src: url("../fonts/OpenSans-BoldItalic.woff") format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+	font-family: $ff-italic;
+	font-style: italic;
+	src : url("../fonts/OpenSans-Italic.woff");
+}
+
+@font-face {
+    font-family: $ff-semibold;
+    src: url("../fonts/OpenSans-SemiBold.woff") format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $ff-semibold-italic;
+    src: url("../fonts/OpenSans-SemiBoldItalic.woff") format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+	font-family: $ff-extrabold;
+	font-style: normal;
+	font-weight: 800;
+	src : url("../fonts/OpenSans-ExtraBold.woff");
+}
+
+@font-face {
+    font-family: $ff-extrabold-italic;
+    src: url("../fonts/OpenSans-ExtraBoldItalic.woff") format('woff');
+    font-weight: 800;
+    font-style: italic;
+}

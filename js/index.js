@@ -244,19 +244,22 @@ function loadApp() {
 			var elementPgt = estrutura.whatsapp[frame].texto;
 			
 			var $balao = document.createElement("div");
+			var $balaoCentro = document.createElement("div");
 			var $pgt = document.createElement("p");
 			
-			// var audio = new Audio('audio/mensagemWhatsapp.mp3');
+			// var audio = document.querySelector();
 			
 
 			
 			$balao.classList.add("balao-e");
+			$balaoCentro.classList.add("balao-center");
 			
 			$pgt.innerHTML = elementPgt;
 			$balao.appendChild($pgt);
 			setTimeout(function(){
 				// audio.play();
 				$dialogo.appendChild($balao);
+				$dialogo.appendChild($balaoCentro);
 			}, 2000) 
 			
 			
@@ -299,11 +302,14 @@ function loadApp() {
 		var ElementWhatsapp = conteudo.querySelector(".janela-whatsapp");
 		var $dialogo = ElementWhatsapp.querySelector(".dialogo-whatsapp");
 		var $balao = document.createElement("div");
-				
+		var $balaoCentro = document.createElement("div");
+
 		$balao.classList.add("balao-d");
+		$balaoCentro.classList.add("balao-center");
 		// console.log(ele);
 		$balao.append(ele);
 		$dialogo.appendChild($balao);
+		$dialogo.appendChild($balaoCentro);
 		frame ++;
 		if(frame + 1 <= estrutura.whatsapp.length ) {
 			telaWhatsapp();
@@ -334,16 +340,19 @@ function loadApp() {
 		conteudo.querySelector("#btn_next").classList.remove("d-none");
 		conteudo.querySelector("#btn_next").classList.add("skyeButton");
 
-		conteudo.querySelector("#btn_next").addEventListener("click", function(e) {
+		// cenaAtual = 2;
+		conteudo.querySelector("#btn_next").addEventListener("click", function() {
 			
 			$videoSkype.classList.add("d-none");
 			var video = conteudo.querySelector("#video");
 			video.classList.remove("d-none");
-			// acionaProximo(2);
+			// acionaNext(2);
+			acionaProximo(2);
 			// habilitaAcao();
-			habilitaContinuar(true);
+			// habilitaContinuar(true);
 			// console.log(next_f);
 			// cenaAtual+1;
+			// playVideo(estrutura.cenas[cenaAtual].video)
 			conteudo.querySelector("#btn_next").classList.remove("skyeButton");
 			
 		});
@@ -373,7 +382,9 @@ function loadApp() {
 		quadro.classList.add("d-none");
 		question.classList.add("d-none");
 		question.innerHTML = "";
+
 		console.log("AVANCOU");
+		
 		acionaProximo(next_f);
 	}
 
