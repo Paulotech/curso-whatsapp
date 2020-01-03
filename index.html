@@ -17,6 +17,26 @@
 		<script type="text/javascript" src="js/index.js?201709291"></script>
 	</head>
 	<body>	
+		<div id="aviso-browser" class="d-none">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<h2>Atenção!</h2>	
+						<p>Para acessar este treinamento utilize os browsers a seguir:</p>
+						<ul>
+							<li>Google Chrome 79 ou superior;</li>
+							<li>Firefox 68 ou superior;</li>
+							<li>Microsoft Edge.</li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-6">
+						<img src="imagens/browsers.png" alt="">
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 		<div id="conteudo">			
 
 			<video id="video"></video>									
@@ -27,17 +47,21 @@
 			
 			<div class="quadro">
 			
-				<div id="pergunta" class="d-none flex"></div>
+				<div id="pergunta" class="d-none"></div>
 			
 				<div id="abertura">
-					<h1>Seja bem-vindo(a)!</h1>
-					<p>A partir deste momento você é um dos funcionários da empresa <strong>Arte e Tecidos Têxtil</strong>! Considerando o seu conhecimento adquirido a respeito da gestão integrada de marketing e de comunicação, aperte o <em>play</em> e nos ajude a tomar algumas decisões!</p>
-					<div id="btn_action"></div>
+					<div id="janela-flex">
+						<h1>Seja bem-vindo(a)!</h1>
+						<p>A partir deste momento você é um dos funcionários da empresa <strong>Arte e Tecidos Têxtil</strong>! Considerando o seu conhecimento adquirido a respeito da gestão integrada de marketing e de comunicação, aperte o <em>play</em> e nos ajude a tomar algumas decisões!</p>
+						<div id="btn_action"></div>
+					</div>
 				</div>
 
 				<div id="encerramento" class="d-none">
-					<h1>Parabéns!</h1>
-					<p>É ótimo poder contar com profissionais empenhados e engajados com o bom desempenho dos processos da empresa. Estamos muito satisfeitos com seu trabalho.</p>				
+					<div id="janela-flex">
+						<h1>Parabéns!</h1>
+						<p>É ótimo poder contar com profissionais empenhados e engajados com o bom desempenho dos processos da empresa. Estamos muito satisfeitos com seu trabalho.</p>
+					</div>
 				</div>
 
 			</div>
@@ -86,11 +110,15 @@
 			<div id="videoSkype" class="d-none">
 
 				<video loop class="video">
-					<source src="videos/cena2.mp4" type="video/mp4">
+					<source src="videos/video2.mp4" type="video/mp4">
 				</video>
-
+ 
 			</div>
-
+			<div></div>
+			<div id="audioWhatsapp">
+				<audio src="audio/whatsappsound.mp3"></audio>
+			</div>
+			
 		</div>
 		<!-- / #conteudo -->
 	</body>

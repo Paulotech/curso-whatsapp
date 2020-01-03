@@ -15,6 +15,7 @@
     	max-width: 640px;
     	height: 100%;
     	box-shadow: 0 5px 5px rgba(0, 0, 0, .25);
+    	position: relative;
     }
 
     .topo-whatsapp, .rodape-whatsapp-imagens {
@@ -77,14 +78,7 @@
 	.dialogo-whatsapp {
 		overflow: auto;
 		background: #e8e1d4 url('../imagens/bg_whatsapp.jpg') no-repeat center;
-		height: calc(100% - 300px);
-
-		.balao-e {
-
-			&:first-of-type {
-				margin-top: 50px;
-			}
-		}
+		height: calc(100% - 100px);
 
 		.balao-d, .balao-e {
 			padding: 10px;
@@ -156,10 +150,12 @@
 
 	.rodape-whatsapp {
 		background: #e8e1d4 url('../imagens/bg_whatsapp.jpg') no-repeat center;
-		height: 200px;
 		padding: 10px;
-		position: relative;
+		position: absolute;
 		text-align: center;
+		bottom: 50px;
+		left: 0;
+		right: 0;
 
 		.indicacao:not(.d-none) ~ {
 			.res {
@@ -217,13 +213,21 @@
 	}
 }
 
+@media screen and (max-width: 575px) {
+	.janela-whatsapp {
 
-#videoSkype {
-	width: 100%;
-	height: 100%;
-	background-color: aqua;
-}
-#videoSkype .video {
-	width: 100%;
-	height: 100%;
+		.dialogo-whatsapp {
+			height: calc(100% - 300px);
+
+			&.dialogo-fim {
+				height: calc(100% - 100px) !important;
+			}
+		}
+
+		.rodape-whatsapp {
+			position: inherit;
+			height: 200px;
+			bottom: inherit;
+		}
+	}
 }
